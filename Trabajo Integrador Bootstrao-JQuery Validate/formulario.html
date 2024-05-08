@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <!--    
+        Para centrar el contenedor en medio de la pagina se usa
+        * d-flex
+        * justify-content-center
+        * align-items-center
+        * para solo centrar horizontalmente usar mx-auto
+
+    -->
+    <!--primero creamos un contenedor para meter el formulario-->
+    <div class="container"> 
+        <form id="formulario">
+            <div class="row"> <!--las rows deben siempre ir conteniendo las col-->
+                <div class="col-md-6 mb-3"> <!--mb-3 tiene margin bottom 3,col-md-6 significa que el elemento ocupará 6 columnas de 12 para pantallas medianas en adelante. Para pantallas más pequeñas que "md", el elemento ocupará el 100% del ancho (a menos que se especifique algo diferente para esos tamaños más pequeños). -->
+                    <label for="nombre" class="form-label" =>Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre">
+                </div>
+                <div class="col-md-6 mb-3"> 
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <!--
+                    Uso Correcto del Atributo name para Grupos de Radio Buttons:
+                    Los radio buttons deben tener el mismo atributo name para funcionar como un grupo.
+                    Si cada botón tiene un nombre diferente, no funcionarán como un grupo y no se comportarán como se espera.
+                    IDs Únicos para Cada Radio Button:
+                    Asegúrate de que cada radio button 
+                    tenga un ID único para evitar conflictos. Tener IDs duplicados puede causar errores.
+                    -->
+                    <label for="nivel" class="form-label">Nivel:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nivel" id="nivel-primario" value="Primario" checked> <!-- Nombre unificado -->
+                        <label class="form-check-label" for="nivel-primario">
+                          Primario
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nivel" id="nivel-secundario" value="Secundario"> <!-- Nombre unificado -->
+                        <label class="form-check-label" for="nivel-secundario">
+                          Secundario
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nivel" id="nivel-terciario" value="Terciario"> <!-- Nombre unificado -->
+                        <label class="form-check-label" for="nivel-terciario">
+                          Terciario
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nivel" id="nivel-universitario" value="Universitario"> <!-- Nombre unificado -->
+                        <label class="form-check-label" for="nivel-universitario">
+                          Universitario
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <!--
+                El evento onchange en JavaScript se usa para detectar 
+                cambios en el valor de un elemento, como un campo de entrada, 
+                un checkbox, o un menú desplegable (select).
+                Para cargar datos de un combo
+                (por ejemplo, cargar provincias según el país seleccionado), 
+                puedes usar el evento onchange para escuchar cambios en el valor de un 
+                combo y luego actualizar el contenido del segundo combo basado en la 
+                selección hecha en el primero.
+            -->
+            <div class="col-md-6 mb-3">
+                <label for="pais">Seleccionar País</label>
+                <select class="form-control" id="pais" name="pais" required onchange="cargarProvincias()">
+                    <option value="" disabled selected>Seleccione un país</option> <!-- Estado inicial -->
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="mexico">México</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="provincia">Seleccionar Provincia</label>
+                <select class="form-control" id="provincia" name="provincia" required>
+                    <option value="" disabled selected>Seleccione un país primero</option> <!-- Estado inicial -->
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md mb-3">
+                    <button type="submit" class="btn btn-primary" name="enviar">Enviar</button>
+                </div>
+            </div>
+        </form>  
+    </div>
+            
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

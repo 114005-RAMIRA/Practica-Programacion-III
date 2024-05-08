@@ -1,0 +1,23 @@
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1572452734990-62a82b486fcf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Reemplaza con tu URL de imagen */
+    background-size: cover; /* Ajusta la imagen para que cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    z-index: -1; /* La imagen aparece detrás de todos los elementos */
+}
+
+#imagenFinal {
+    background-image: url('https://images.unsplash.com/photo-1480180566821-a7d525cdfc5e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    min-height: 300px; /* Altura mínima para asegurar visibilidad de la imagen */
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
