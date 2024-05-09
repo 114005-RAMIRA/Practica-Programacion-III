@@ -3,3 +3,17 @@
     text-align: left;
     width: 100%;
 }
+
+#form-errors {
+    border: 2px solid red; /* Contorno rojo */
+    padding: 10px;         /* Espaciado interno */
+    background-color: rgba(255, 0, 0, 0.1); /* Fondo rojo claro translúcido */
+    border-radius: 5px;    /* Bordes redondeados para un aspecto más suave */
+}
+
+/* Estilo para el texto y las listas en el contenedor de errores */
+#form-errors h4, 
+#form-errors ul, 
+#form-errors li {
+    color: red; /* Texto rojo */
+}
