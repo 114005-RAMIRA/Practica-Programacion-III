@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; margin: 0;">
+    <div class="container text-center border border-dark rounded p-4">
+        <form id="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                
+                <input type="email" class="form-control" id="inputMail" name="email" aria-describedby="emailHelp">
+                <div id="emailError" class="error" style="display: none;"></div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputClave" name="clave">
+                <div id="ClaveError" class="error" style="display: none;">Contraseña incorrecta</div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100" type="submit">Ingresar</button> <!-- Cambio a type="submit" -->
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script>
+        $("form").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                clave: {
+                    required: true
+                }
+            },
+            messages: {
+                email: {
+                    required: "El campo email es requerido",
+                    email: "Email inválido"
+                },
+                clave: {
+                    required: "El campo clave es requerido"
+                }
+            },
+
+            submitHandler: function(form) {
+
+            const email = $("#inputMail").val();
+            const clave = $("#inputClave").val();
+
+         
+            if (email !== "alumnotup@frc.utn.edu.ar") {
+                $("#emailError").show();
+                return; 
+            } else {
+                $("#emailError").hide();
+            }
+
+            if (clave !== "123456") {
+                $("#ClaveError").show();
+                return;
+            } else {
+                $("#ClaveError").hide();
+            }
+
+
+            localStorage.setItem("email", email);
+            form.submit(); // Enviar el formulario
+            window.location.href="ShopingDetails.html";
+            }
+        });
+
+    </script>
+</body>
+</html>
