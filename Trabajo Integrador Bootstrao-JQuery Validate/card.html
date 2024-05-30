@@ -25,31 +25,52 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded",function(){
-            const nombre = localStorage.getItem("nombre");
-            const apellido = localStorage.getItem("apellido");
-            const nivel = localStorage.getItem("nivel");
-            const pais = localStorage.getItem("pais");
-            const provincia = localStorage.getItem("provincia");
-
-            //setear el valor de los campos a las cards
-
+        // Escuchar el evento "DOMContentLoaded" para ejecutar el código una vez que el DOM esté completamente cargado
+        
+        /*
+        el evento "DOMContentLoaded" indica que la estructura del documento HTML 
+        está lista para ser manipulada por scripts, incluso si otros elementos de la página 
+        aún están cargando. Esto es útil cuando necesitas ejecutar scripts que interactúan con 
+        elementos HTML sin tener que esperar a que toda la página, incluidas las imágenes y otros 
+        recursos, esté completamente cargada.
+        */
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            // Recuperar datos almacenados localmente usando localStorage
+            const nombre = localStorage.getItem("nombre");  // Recuperar el valor almacenado en "nombre"
+            const apellido = localStorage.getItem("apellido");  // Recuperar el valor almacenado en "apellido"
+            const nivel = localStorage.getItem("nivel");  // Recuperar el valor almacenado en "nivel"
+            const pais = localStorage.getItem("pais");  // Recuperar el valor almacenado en "pais"
+            const provincia = localStorage.getItem("provincia");  // Recuperar el valor almacenado en "provincia"
+        
+            // Configurar el valor de los campos para las tarjetas en la interfaz de usuario
+            
+            // Si existe un valor para "nombre", se actualiza el texto del elemento con ID "nombre"
             if (nombre) {
-                $("#nombre").text("Nombre: " + nombre); // Uso de .text()
+                $("#nombre").text("Nombre: " + nombre);  // Usar el método .text() de jQuery para establecer el texto
             }
+            
+            // Si existe un valor para "apellido", se actualiza el texto del elemento con ID "apellido"
             if (apellido) {
                 $("#apellido").text("Apellido: " + apellido);
             }
+            
+            // Si existe un valor para "nivel", se actualiza el texto del elemento con ID "nivel"
             if (nivel) {
                 $("#nivel").text("Nivel: " + nivel);
             }
+            
+            // Si existe un valor para "pais", se actualiza el texto del elemento con ID "pais"
             if (pais) {
                 $("#pais").text("País: " + pais);
             }
+            
+            // Si existe un valor para "provincia", se actualiza el texto del elemento con ID "provincia"
             if (provincia) {
                 $("#provincia").text("Provincia: " + provincia);
             }
-        })
-    </script>
+        });
+        </script>
+        
 </body>
 </html>

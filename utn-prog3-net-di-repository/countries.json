@@ -1,0 +1,6 @@
+[
+  { "Id": "1", "Name": "Argentina" }, // Objeto que representa el país Argentina con ID "1" y nombre "Argentina".
+  { "Id": "2", "Name": "Francia" },   // Objeto que representa el país Francia con ID "2" y nombre "Francia".
+  { "Id": "3", "Name": "Brasil" },    // Objeto que representa el país Brasil con ID "3" y nombre "Brasil".
+  { "Id": "4", "Name": "Chile" }      // Objeto que representa el país Chile con ID "4" y nombre "Chile".
+]
