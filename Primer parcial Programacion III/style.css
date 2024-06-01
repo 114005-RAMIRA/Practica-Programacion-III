@@ -1,0 +1,12 @@
+#botonform {
+    background-color: #6257fc; /* Color de fondo morado */
+    color: white; /* Color del texto */
+    border-color: #6257fc; /* Color del borde */
+}
+
+#titulo{
+    color: #6257fc;
+    font-weight: bold;
+    text-align: left;
+}
+
